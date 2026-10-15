@@ -1,0 +1,529 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Global OS Variables */
+@theme {
+  --color-os-bg: #0A0A0A;
+  --color-os-panel: rgba(25, 25, 25, 0.65);
+  --color-os-border: rgba(255, 255, 255, 0.1);
+  --color-os-accent: #4F46E5; /* Indigo */
+}
+
+body {
+  background-color: var(--color-os-bg);
+  color: white;
+  overflow: hidden; /* No scrolling on the desktop */
+  user-select: none; /* Prevent accidental text highlighting while dragging windows */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DevOS Deep Theme System (Variables & Global Program Overrides)
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* 1. DEFAULT (Classic DevOS Dark Glassy) */
+[data-theme-style="default"] {
+  --app-bg: #1e1e1e;
+  --app-sidebar-bg: #2a2a2a;
+  --app-header-bg: #2d2d2d;
+  --app-card-bg: rgba(255, 255, 255, 0.04);
+  --app-card-border: rgba(255, 255, 255, 0.1);
+  --app-text-main: #f3f4f6;
+  --app-text-muted: #9ca3af;
+  --app-input-bg: rgba(255, 255, 255, 0.05);
+  --app-dock-bg: rgba(26, 26, 26, 0.65);
+  --app-dock-icon: #e5e7eb;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2. NEO-BRUTALISM (Bold Pop Colors, Solid 3px Borders & Hard Shadows)
+   ───────────────────────────────────────────────────────────────────────── */
+[data-theme-style="neobrutalism"] {
+  font-family: 'Space Grotesk', 'Courier New', monospace, sans-serif !important;
+  --app-bg: #FFFDF0;
+  --app-sidebar-bg: #FFDE59;
+  --app-header-bg: #FF66C4;
+  --app-card-bg: #FFFFFF;
+  --app-card-border: 2px solid #000000;
+  --app-text-main: #000000;
+  --app-text-muted: #1a202c;
+  --app-input-bg: #FFFFFF;
+  --app-dock-bg: #00E5FF;
+  --app-dock-icon: #000000;
+}
+
+[data-theme-style="neobrutalism"] .theme-window-container {
+  background-color: #FFFDF0 !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 6px 6px 0px 0px #000000 !important;
+  border-radius: 6px !important;
+}
+
+[data-theme-style="neobrutalism"] .theme-window-titlebar {
+  background-color: #FFDE59 !important;
+  color: #000000 !important;
+  border-bottom: 3px solid #000000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-theme-style="neobrutalism"] .theme-dock {
+  background-color: #00E5FF !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 5px 5px 0px 0px #000000 !important;
+  border-radius: 12px !important;
+}
+
+[data-theme-style="neobrutalism"] .theme-topbar {
+  background-color: #FF66C4 !important;
+  color: #000000 !important;
+  border-bottom: 3px solid #000000 !important;
+  font-weight: 700 !important;
+}
+
+/* Deep Neo-Brutalism Button & Card Styling */
+[data-theme-style="neobrutalism"] button:not(.no-brutal),
+[data-theme-style="neobrutalism"] .theme-app-card {
+  border: 2px solid #000000 !important;
+  box-shadow: 3px 3px 0px #000000 !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
+
+[data-theme-style="neobrutalism"] button:not(.no-brutal) {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+[data-theme-style="neobrutalism"] button:not(.no-brutal) [class*="text-"],
+[data-theme-style="neobrutalism"] button:not(.no-brutal) svg {
+  color: #000000 !important;
+}
+
+[data-theme-style="neobrutalism"] button:hover:not(.no-brutal) {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0px #000000 !important;
+}
+
+[data-theme-style="neobrutalism"] button:active:not(.no-brutal) {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+}
+
+[data-theme-style="neobrutalism"] input,
+[data-theme-style="neobrutalism"] textarea,
+[data-theme-style="neobrutalism"] select {
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   3. NEON CYBERPUNK (Deep Synthwave, Neon Cyan/Magenta Glow & Scanlines)
+   ───────────────────────────────────────────────────────────────────────── */
+[data-theme-style="neon"] {
+  font-family: 'Orbitron', 'Rajdhani', monospace, sans-serif !important;
+  --app-bg: #0D0B18;
+  --app-sidebar-bg: #140F2D;
+  --app-header-bg: #181238;
+  --app-card-bg: rgba(20, 15, 45, 0.85);
+  --app-card-border: 1px solid #00F0FF;
+  --app-text-main: #00F0FF;
+  --app-text-muted: #E261FF;
+  --app-input-bg: #140F2D;
+  --app-dock-bg: rgba(13, 11, 24, 0.92);
+  --app-dock-icon: #00F0FF;
+}
+
+[data-theme-style="neon"] .theme-window-container {
+  background-color: rgba(13, 11, 24, 0.95) !important;
+  color: #00f0ff !important;
+  border: 1.5px solid #00f0ff !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.45), inset 0 0 15px rgba(0, 240, 255, 0.1) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+[data-theme-style="neon"] .theme-window-titlebar {
+  background-color: #140f2d !important;
+  color: #00f0ff !important;
+  border-bottom: 1px solid #ff007f !important;
+  text-shadow: 0 0 8px #00f0ff, 0 0 16px rgba(0, 240, 255, 0.6);
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+}
+
+[data-theme-style="neon"] .theme-dock {
+  background-color: rgba(13, 11, 24, 0.92) !important;
+  border: 1.5px solid #ff007f !important;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.55), inset 0 0 10px rgba(255, 0, 127, 0.2) !important;
+  border-radius: 16px !important;
+}
+
+[data-theme-style="neon"] .theme-topbar {
+  background-color: rgba(8, 7, 17, 0.92) !important;
+  color: #00f0ff !important;
+  border-bottom: 1px solid #00f0ff !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.35) !important;
+  text-shadow: 0 0 6px #00f0ff;
+}
+
+/* Neon Cyberpunk Glow Buttons & Scanline Effects */
+[data-theme-style="neon"] button {
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.7);
+  transition: all 0.2s ease !important;
+  background-color: transparent !important;
+  border: 1px solid #00f0ff !important;
+  color: #00f0ff !important;
+}
+
+[data-theme-style="neon"] button [class*="text-"],
+[data-theme-style="neon"] button svg {
+  color: #00f0ff !important;
+}
+
+[data-theme-style="neon"] button:hover {
+  box-shadow: 0 0 15px #ff007f, inset 0 0 8px rgba(255, 0, 127, 0.4) !important;
+  border-color: #ff007f !important;
+  color: #ffffff !important;
+}
+
+[data-theme-style="neon"] h1,
+[data-theme-style="neon"] h2,
+[data-theme-style="neon"] h3 {
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.4) !important;
+  color: #00f0ff !important;
+}
+
+[data-theme-style="neon"] input,
+[data-theme-style="neon"] textarea {
+  border: 1px solid #00f0ff !important;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3) !important;
+  color: #00f0ff !important;
+  background-color: #0d0b18 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   4. DOODLE SKETCHBOOK (Cream Paper Texture, Organic Dashed Borders & Ink)
+   ───────────────────────────────────────────────────────────────────────── */
+[data-theme-style="doodle"] {
+  font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif !important;
+  font-size: 1.05rem;
+  --app-bg: #FFFDF9;
+  --app-sidebar-bg: #F3EDE2;
+  --app-header-bg: #EAE1D0;
+  --app-card-bg: #FFFFFF;
+  --app-card-border: 2px dashed #2B2B2B;
+  --app-text-main: #1A202C;
+  --app-text-muted: #4A5568;
+  --app-input-bg: #FFFFFF;
+  --app-dock-bg: #FFFDF9;
+  --app-dock-icon: #1A202C;
+}
+
+[data-theme-style="doodle"] .theme-window-container {
+  background-color: #FFFDF9 !important;
+  color: #2D3748 !important;
+  border: 2px dashed #2B2B2B !important;
+  box-shadow: 4px 4px 0px #2B2B2B !important;
+  border-radius: 16px !important;
+}
+
+[data-theme-style="doodle"] .theme-window-titlebar {
+  background-color: #F3EDE2 !important;
+  color: #1A202C !important;
+  border-bottom: 2px dashed #2B2B2B !important;
+  font-weight: 700 !important;
+}
+
+[data-theme-style="doodle"] .theme-dock {
+  background-color: #FFFDF9 !important;
+  border: 2px dashed #2B2B2B !important;
+  box-shadow: 3px 3px 0px #2B2B2B !important;
+  border-radius: 18px !important;
+}
+
+[data-theme-style="doodle"] .theme-topbar {
+  background-color: #F3EDE2 !important;
+  color: #1A202C !important;
+  border-bottom: 2px dashed #2B2B2B !important;
+  font-weight: 700 !important;
+}
+
+/* Doodle Sketchbook Hand-Drawn Cards & Notebook Badges */
+[data-theme-style="doodle"] button,
+[data-theme-style="doodle"] .theme-app-card {
+  border: 2px dashed #2b2b2b !important;
+  border-radius: 12px !important;
+  background-color: #fffdf9 !important;
+  box-shadow: 2px 2px 0px #2b2b2b !important;
+}
+
+[data-theme-style="doodle"] button {
+  color: #1a202c !important;
+}
+
+[data-theme-style="doodle"] button [class*="text-"],
+[data-theme-style="doodle"] button svg {
+  color: #1a202c !important;
+}
+
+[data-theme-style="doodle"] button:hover {
+  background-color: #fef9e7 !important;
+  transform: rotate(-0.5deg) scale(1.02);
+}
+
+[data-theme-style="doodle"] input,
+[data-theme-style="doodle"] textarea {
+  border: 2px dashed #2b2b2b !important;
+  background-color: #fffdf9 !important;
+  color: #1a202c !important;
+  border-radius: 10px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   5. MYSPACE (WEB 1.0 90s RETRO — Classic Win95 Bevels & Blue Titlebars)
+   ───────────────────────────────────────────────────────────────────────── */
+[data-theme-style="myspace"] {
+  font-family: 'VT323', 'Times New Roman', Times, serif !important;
+  font-size: 1.1rem;
+  --app-bg: #C0C0C0;
+  --app-sidebar-bg: #D4D4D4;
+  --app-header-bg: #000080;
+  --app-card-bg: #FFFFFF;
+  --app-card-border: 2px solid #000000;
+  --app-text-main: #000000;
+  --app-text-muted: #000080;
+  --app-input-bg: #FFFFFF;
+  --app-dock-bg: #C0C0C0;
+  --app-dock-icon: #000000;
+}
+
+[data-theme-style="myspace"] .theme-window-container {
+  background-color: #C0C0C0 !important;
+  color: #000000 !important;
+  border-top: 2px solid #FFFFFF !important;
+  border-left: 2px solid #FFFFFF !important;
+  border-bottom: 2px solid #404040 !important;
+  border-right: 2px solid #404040 !important;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.45) !important;
+  border-radius: 0px !important;
+}
+
+[data-theme-style="myspace"] .theme-window-titlebar {
+  background: linear-gradient(90deg, #000080 0%, #1084D0 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+[data-theme-style="myspace"] .theme-dock {
+  background-color: #C0C0C0 !important;
+  border-top: 2px solid #FFFFFF !important;
+  border-left: 2px solid #FFFFFF !important;
+  border-bottom: 2px solid #404040 !important;
+  border-right: 2px solid #404040 !important;
+  border-radius: 0px !important;
+}
+
+[data-theme-style="myspace"] .theme-topbar {
+  background-color: #000080 !important;
+  color: #FFFF00 !important;
+  border-bottom: 2px solid #FFFFFF !important;
+  font-weight: bold;
+}
+
+/* MySpace Win95 3D Raised Buttons & Bevels */
+[data-theme-style="myspace"] button {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border-top: 2px solid #ffffff !important;
+  border-left: 2px solid #ffffff !important;
+  border-bottom: 2px solid #404040 !important;
+  border-right: 2px solid #404040 !important;
+  border-radius: 0px !important;
+  font-weight: bold;
+}
+
+[data-theme-style="myspace"] button [class*="text-"],
+[data-theme-style="myspace"] button svg {
+  color: #000000 !important;
+}
+
+[data-theme-style="myspace"] button:active {
+  border-top: 2px solid #404040 !important;
+  border-left: 2px solid #404040 !important;
+  border-bottom: 2px solid #ffffff !important;
+  border-right: 2px solid #ffffff !important;
+}
+
+[data-theme-style="myspace"] input,
+[data-theme-style="myspace"] textarea {
+  border-top: 2px solid #404040 !important;
+  border-left: 2px solid #404040 !important;
+  border-bottom: 2px solid #ffffff !important;
+  border-right: 2px solid #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLOBAL PROGRAM CONTENT OVERRIDES FOR NON-DEFAULT THEMES
+   ───────────────────────────────────────────────────────────────────────── */
+
+[data-theme-style]:not([data-theme-style="default"]) .theme-app-body,
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#1e1e1e]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#111111]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#111]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#161616]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#14141a]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#0e0e12]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#0d0d0d]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#0a0a0a]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#141428]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#1a1a2e]"] {
+  background-color: var(--app-bg) !important;
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) div[class*="from-[#0d0d0d]"] {
+  background-image: none !important;
+  background-color: var(--app-bg) !important;
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#2a2a2a]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#2d2d2d]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#1a1a1a]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#181820]"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-[#18181b]"] {
+  background-color: var(--app-sidebar-bg) !important;
+  color: var(--app-text-main) !important;
+  border-color: var(--app-card-border) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-white/4"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-white/5"],
+[data-theme-style]:not([data-theme-style="default"]) div[class*="bg-white/8"] {
+  background-color: var(--app-card-bg) !important;
+  border: var(--app-card-border) !important;
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-white"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-black"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-100"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-200"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-zinc-100"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-zinc-200"] {
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-300"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-400"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-500"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-gray-600"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-zinc-300"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-zinc-400"],
+[data-theme-style]:not([data-theme-style="default"]) [class*="text-zinc-500"] {
+  color: var(--app-text-muted) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) h1,
+[data-theme-style]:not([data-theme-style="default"]) h2,
+[data-theme-style]:not([data-theme-style="default"]) h3,
+[data-theme-style]:not([data-theme-style="default"]) h4,
+[data-theme-style]:not([data-theme-style="default"]) h5,
+[data-theme-style]:not([data-theme-style="default"]) h6,
+[data-theme-style]:not([data-theme-style="default"]) label {
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) input,
+[data-theme-style]:not([data-theme-style="default"]) textarea,
+[data-theme-style]:not([data-theme-style="default"]) select {
+  background-color: var(--app-input-bg) !important;
+  color: var(--app-text-main) !important;
+  border-color: var(--app-card-border) !important;
+}
+
+[data-theme-style]:not([data-theme-style="default"]) ::placeholder {
+  color: var(--app-text-muted) !important;
+  opacity: 0.7 !important;
+}
+
+/* Dock & TopBar Icon Color Overrides for themes */
+[data-theme-style="doodle"] .theme-dock svg,
+[data-theme-style="neobrutalism"] .theme-dock svg,
+[data-theme-style="myspace"] .theme-dock svg {
+  color: var(--app-dock-icon) !important;
+}
+
+[data-theme-style="doodle"] .theme-topbar,
+[data-theme-style="neobrutalism"] .theme-topbar {
+  color: var(--app-text-main) !important;
+}
+
+[data-theme-style="doodle"] .theme-topbar svg,
+[data-theme-style="neobrutalism"] .theme-topbar svg {
+  color: var(--app-text-main) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   7 UI RULES & UX LAWS DESIGN SYSTEM UTILITIES
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Rule 1: Light Comes From the Sky */
+.ui-card-elevated {
+  border-top-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.ui-inset-recessed {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Rule 3 & UX Laws: Generous Whitespace & Line Height */
+.ui-spacious-padding {
+  padding: 1.5rem !important;
+}
+
+.ui-spacious-gap {
+  gap: 1.5rem !important;
+}
+
+.ui-text-spaced {
+  line-height: 1.75 !important;
+}
+
+/* Rule 5: Make Text Pop — and Un-pop */
+.ui-text-pop {
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ui-text-unpop {
+  color: var(--app-text-muted) !important;
+  font-weight: 500 !important;
+}
+
+.ui-label-tertiary {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--app-text-muted) !important;
+  opacity: 0.85;
+}
+
+/* Fitts's Law: Minimum hit target */
+.ui-hit-target {
+  min-width: 40px !important;
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

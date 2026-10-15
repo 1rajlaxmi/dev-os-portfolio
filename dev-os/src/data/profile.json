@@ -1,0 +1,151 @@
+{
+  "name": "Rajlaxmi Gupta",
+  "tagline": "Full Stack Developer",
+  "role": "Full Stack Developer Intern @ AIDEOA",
+  "company": "AIDEOA",
+  "internshipStart": "October 2024",
+  "education": "Master of Computer Application (MCA)",
+  "graduationYear": "2024",
+  "university": "Central University of Haryana",
+  "location": "Patna, Bihar, India",
+  "bio": "Full Stack Developer with hands-on internship experience building real-time systems, payment integrations, and scalable REST APIs. MCA graduate from Central University of Haryana. 400+ DSA problems solved across LeetCode, GFG, and HackerRank.",
+  "github": "https://github.com/1rajlaxmi/",
+  "linkedin": "https://www.linkedin.com/in/rajlaxmi-cuh/",
+  "email": "rajlaxmigupta@atomicmail.io",
+  "twitter": "",
+  "techStack": [
+    {
+      "name": "React.js",
+      "color": "bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+    },
+    {
+      "name": "Next.js",
+      "color": "bg-white/10 text-gray-200 border-white/20"
+    },
+    {
+      "name": "Node.js",
+      "color": "bg-green-500/20 text-green-300 border-green-500/30"
+    },
+    {
+      "name": "Express.js",
+      "color": "bg-gray-500/20 text-gray-300 border-gray-500/30"
+    },
+    {
+      "name": "MongoDB",
+      "color": "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+    },
+    {
+      "name": "Socket.io",
+      "color": "bg-yellow-500/20 text-yellow-300 border-yellow-500/30"
+    },
+    {
+      "name": "Tailwind CSS",
+      "color": "bg-sky-500/20 text-sky-300 border-sky-500/30"
+    },
+    {
+      "name": "TypeScript",
+      "color": "bg-blue-500/20 text-blue-300 border-blue-500/30"
+    },
+    {
+      "name": "JWT Auth",
+      "color": "bg-pink-500/20 text-pink-300 border-pink-500/30"
+    },
+    {
+      "name": "REST APIs",
+      "color": "bg-purple-500/20 text-purple-300 border-purple-500/30"
+    },
+    {
+      "name": "DSA",
+      "color": "bg-orange-500/20 text-orange-300 border-orange-500/30"
+    },
+    {
+      "name": "Git & GitHub",
+      "color": "bg-red-500/20 text-red-300 border-red-500/30"
+    }
+  ],
+  "achievements": [
+    {
+      "label": "Problems Solved",
+      "value": "400+",
+      "platform": "GFG · HackerRank · LeetCode"
+    },
+    {
+      "label": "Contest Rank",
+      "value": "AIR 5124",
+      "platform": "CodingNinjas Codekaze"
+    },
+    {
+      "label": "Institution Rank",
+      "value": "Under 45",
+      "platform": "GeeksForGeeks"
+    }
+  ],
+  "projects": [
+    {
+      "id": "roomieos",
+      "title": "RoomieOS",
+      "description": "A full-stack real-time room management system. Implemented a low-latency WebSocket synchronization layer for instant dashboard updates. Features secure cookie-based JWT authentication and API rate-limiting middleware.",
+      "tech": [
+        "React.js",
+        "Node.js",
+        "Socket.io",
+        "MongoDB",
+        "JWT",
+        "Express.js"
+      ],
+      "github": "https://github.com/1rajlaxmi/RoomieOS",
+      "live": "",
+      "color": "from-indigo-600/30 to-purple-600/30",
+      "borderColor": "border-indigo-500/30"
+    },
+    {
+      "id": "chitchat",
+      "title": "Chit Chat App",
+      "description": "A real-time full-duplex chat application built with Socket.io for instant messaging. Features user authentication, chat rooms, and message persistence.",
+      "tech": [
+        "React.js",
+        "Node.js",
+        "Socket.io",
+        "MongoDB",
+        "Express.js"
+      ],
+      "github": "https://github.com/1rajlaxmi/chit-chat",
+      "live": "",
+      "color": "from-green-600/30 to-teal-600/30",
+      "borderColor": "border-green-500/30"
+    },
+    {
+      "id": "aideoa-work",
+      "title": "AIDEOA Internship Work",
+      "description": "Production work at AIDEOA: built responsive React UIs, RESTful Node.js/Express APIs, and integrated the PayU Payment Gateway with full webhook & hash-verification flow. Improved organic traffic via structured metadata SEO strategies.",
+      "tech": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "PayU Gateway",
+        "SEO"
+      ],
+      "github": "",
+      "live": "https://aideoa.com",
+      "color": "from-orange-600/30 to-red-600/30",
+      "borderColor": "border-orange-500/30"
+    },
+    {
+      "id": "devos",
+      "title": "DevOS Portfolio",
+      "description": "This very portfolio — a browser-based OS simulation built with React, TypeScript, Vite, Redux Toolkit, and a Node.js/Express backend. Features a window manager, virtual file system, terminal emulator, and multiple apps.",
+      "tech": [
+        "React.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "Node.js",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "github": "https://github.com/1rajlaxmi/devos-portfolio",
+      "live": "",
+      "color": "from-cyan-600/30 to-blue-600/30",
+      "borderColor": "border-cyan-500/30"
+    }
+  ]
+}
